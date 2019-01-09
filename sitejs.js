@@ -1,8 +1,8 @@
 
-var canvas = new fabric.Canvas('c');
+var canvas = new fabric.Canvas('stage-canvas');
 var grid = 35;
 var w1 = screen.height;
-fabric.Object.prototype.hasControls = false;
+fabric.Object.prototype.hasControls = false; //objects on canvas can't be resized/rotated
 
 
 // create grid

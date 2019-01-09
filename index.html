@@ -1,48 +1,39 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="index.css">
-<script src="fabric.js"></script>
-<script src="jquery-3.1.1.min.js"></script>
-<script src="sitejs.js"></script>
-<script><!-- run stiejs.js -->
-var script = document.createElement('script');
-script.src = "sitejs.js";
-document.getElementsByTagName('script')[0].parentNode.appendChild(script);
-</script>
-
-
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="fabric.js"></script>
+    <script type="text/javascript" src="sitejs.js"></script>
 <body>
 <div id="main">
-<div id="left">
-<img id="logo" src="logo.png" width="260"/>
-<h1>Stage Designer</h1>
-<hr/>
-<div id="images">
-<img draggable="true" src="sun.png"class="my-image">
-<img draggable="true" src="gut.png" class="my-image">
-<img draggable="true" src="monitor.png" class="my-image">
-<img draggable="true" src="keyboard.png" class="my-image">
-<img draggable="true" id="it" src="chair.png" class="my-image1">
-
-</div>
-</div>
-<div id="right">
-<div id="canvas-container">
-<canvas id="c" width="2000" height="2000"></canvas>
-</div>
-<img src="stagefront.png" id="frontstage"/>
-<img src="blackbox.png" id="bbox"/>
-<button id="delete">Delete object(s)</button>
-<button id="buttonnotepad" onclick="outNotepad()">Notepad</button>
-<button id="buttonnotepadin" onclick="inNotepad()">></button>
-<textarea id="notepad"></textarea>
-<p id="text1">Place object and type to change number or double click it</p>
-<button id="clearB" onclick="clearCanvas()">Clear all</button>
-<button id="saveB" onclick="exportSVG()">save</button>
-<button id="dupB">Duplicate object(s)</button>
+    <div id="left">
+        <img id="logo" src="images/logo.png" width="260px"/>
+        <h1>Stage Designer</h1>
+        <hr/>
+        <div id="images">
+            <img draggable="true" src="images/sun.png" class="my-image">
+            <img draggable="true" src="images/gut.png" class="my-image">
+            <img draggable="true" src="images/monitor.png" class="my-image">
+            <img draggable="true" src="images/keyboard.png" class="my-image">
+            <img draggable="true" id="it" src="images/chair.png" class="my-image1">
+        </div>
+    </div>
+    <div id="right">
+        <div id="canvas-container">
+            <canvas id="stage-canvas" width="2000" height="2000"></canvas>
+        </div>
+        <img src="images/stagefront.png" id="frontstage"/>
+        <!--<button id="delete">Delete object(s)</button>-->
+        <!--<button id="buttonnotepad" onclick="outNotepad()">Notepad</button>-->
+        <!--<button id="buttonnotepadin" onclick="inNotepad()">></button>-->
+        <!--<textarea id="notepad"></textarea>-->
+        <!--<p id="text1">Place object and type to change number or double click it</p>-->
+        <!--<button id="clearB" onclick="clearCanvas()">Clear all</button>-->
+        <!--<button id="saveB" onclick="exportSVG()">save</button>-->
+        <!--<button id="dupB">Duplicate object(s)</button>-->
 
 
-</div>
+    </div>
 </div>
 </body>
 </html>

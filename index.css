@@ -30,7 +30,7 @@ padding-top:6px;
 }
 h1{
 width: 260px;
-font-family: arial;
+font-family: Arial;
 font-size: 30px;
 color: white;
 margin: 0px;
@@ -60,12 +60,7 @@ bottom:0px;
 width:calc(100% - 263px);
 pointer-events: none;
 }
-#bbox{
-position:fixed;
-left:263px;
-top:0px;
-pointer-events: none;
-}
+
 #canvas-container {
     width: 2000px;
     height: 1000px;
