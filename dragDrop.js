@@ -16,7 +16,7 @@ function bindDraggingFunctions() {
         // Bind the event listeners for the canvas
         var canvasContainer = document.getElementById('canvas-container');
         // canvasContainer.addEventListener('dragenter', handleDragEnter, false);
-        canvasContainer.addEventListener('dragover', handleDragOver, false);
+        // canvasContainer.addEventListener('dragover', handleDragOver, false);
         // canvasContainer.addEventListener('dragleave', handleDragLeave, false);
         canvasContainer.addEventListener('drop', handleDrop, false);
     } else {
@@ -44,16 +44,16 @@ function handleDragEnd(e) {
 //     this.classList.add('over');
 // }
 //
-function handleDragOver(e) {
-    if (e.preventDefault) {
-        e.preventDefault(); // Necessary. Allows us to drop.
-    }
-
-    e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
-    // NOTE: comment above refers to the article (see top) -natchiketa
-
-    return false;
-}
+// function handleDragOver(e) {
+//     if (e.preventDefault) {
+//         e.preventDefault(); // Necessary. Allows us to drop.
+//     }
+//
+//     e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
+//     // NOTE: comment above refers to the article (see top) -natchiketa
+//
+//     return false;
+// }
 //
 // function handleDragLeave(e) {
 //     this.classList.remove('over'); // this / e.target is previous target element.
@@ -62,9 +62,9 @@ function handleDragOver(e) {
 function handleDrop(e) {
     // this / e.target is current target element.
 
-    if (e.stopPropagation) {
-        e.stopPropagation(); // stops the browser from redirecting.
-    }
+    // if (e.stopPropagation) {
+    //     e.stopPropagation(); // stops the browser from redirecting.
+    // }
 
 
     var group;
@@ -73,7 +73,7 @@ function handleDrop(e) {
 
     if(image.classList.value !== 'stage-object n img_dragging') {
         var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 7, top: 4});
-        group = new fabric.Group([canvasImage, text], {left: e.layerX-50, top: e.layerY-50});
+        group = new fabric.Group([canvasImage, text], {left: Math.round((e.layerX-50) / grid) * grid, top: Math.round((e.layerY-50) / grid) * grid});
         // text.enterEditing();
         // text.selectAll();
     } else {
