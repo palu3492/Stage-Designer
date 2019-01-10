@@ -17,6 +17,45 @@ function main() {
             top: Math.round(options.target.top / grid) * grid
         });
     });
+
+    if (window.FileReader) {
+        // Browser supports HTML5 DnD.
+
+        // Bind the event listeners for the image elements
+        var images = document.querySelectorAll('#images img');
+        [].forEach.call(images, function (img) {
+            img.addEventListener('dragstart', handleDragStart, false);
+            img.addEventListener('dragend', handleDragEnd, false);
+        });
+        // Bind the event listeners for the canvas
+        var canvasContainer = document.getElementById('canvas-container');
+        canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+        canvasContainer.addEventListener('dragover', handleDragOver, false);
+        canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+        canvasContainer.addEventListener('drop', handleDrop, false);
+    } else {
+        // Replace with a fallback to a library solution.
+        alert("This browser doesn't support the HTML5 Drag and Drop API.");
+    }
+
+    window.fabric.util.addListener(canvas.upperCanvasEl, 'dblclick', function (event, self) {
+        ChangeText();
+    });
+
+    canvas.observe('mouse:over', function (e) { 	//so grid wont have cursor
+        if (e.target.get('type') === 'line') {
+            e.target.hoverCursor = 'default';
+        }
+
+    });
+    $(document).keydown(function (e) {
+        if (e.keyCode === 46) {
+            deleteObjects();
+        }
+    });
+    $("#dupB").click(function () {
+        cloneObj();
+    });
 }
 
 // create grid
@@ -82,16 +121,16 @@ function handleDrop(e) {
     canvas.add(newImage);
 
 
-    if (img.className != "my-image1 img_dragging canvas-img") { //makes sure it should have text
+    if (img.className !== "my-image1 img_dragging canvas-img") { //makes sure it should have text
         var newText = new fabric.IText('#', {					//creates text
             left: e.layerX + 6,
             top: e.layerY + 3,
             fontFamily: 'Helvetica',
             fontSize: 30,
             fill: 'white',
-        })
-        canvas.add(newText)
-        canvas.bringToFront(newText)
+        });
+        canvas.add(newText);
+        canvas.bringToFront(newText);
         newText.enterEditing();
         newText.selectAll();
     }
@@ -109,25 +148,7 @@ function handleDragEnd(e) {
     });
 }
 
-if (window.FileReader) {
-    // Browser supports HTML5 DnD.
 
-    // Bind the event listeners for the image elements
-    var images = document.querySelectorAll('#images img');
-    [].forEach.call(images, function (img) {
-        img.addEventListener('dragstart', handleDragStart, false);
-        img.addEventListener('dragend', handleDragEnd, false);
-    });
-    // Bind the event listeners for the canvas
-    var canvasContainer = document.getElementById('canvas-container');
-    canvasContainer.addEventListener('dragenter', handleDragEnter, false);
-    canvasContainer.addEventListener('dragover', handleDragOver, false);
-    canvasContainer.addEventListener('dragleave', handleDragLeave, false);
-    canvasContainer.addEventListener('drop', handleDrop, false);
-} else {
-    // Replace with a fallback to a library solution.
-    alert("This browser doesn't support the HTML5 Drag and Drop API.");
-}
 
 function deleteObjects() {
     var activeObject = canvas.getActiveObject(),
@@ -207,26 +228,6 @@ function ChangeText() { //change text function
         items[1].selectAll();
     }
     var groupp2 = new fabric.Group(items);
-
     canvas.add(groupp2);
 }
 
-window.fabric.util.addListener(canvas.upperCanvasEl, 'dblclick', function (event, self) {
-    ChangeText();
-});
-
-canvas.observe('mouse:over', function (e) { 	//so grid wont have cursor
-    if (e.target.get('type') == 'line') {
-
-        e.target.hoverCursor = 'default';
-    }
-
-});
-$(document).keydown(function (e) {
-    if (e.keyCode == 46) {
-        deleteObjects();
-    }
-});
-$("#dupB").click(function () {
-    cloneObj();
-});
