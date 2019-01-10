@@ -69,7 +69,7 @@ function handleDrop(e) {
 
     var group;
     var image = document.querySelector('#objects img.img_dragging');
-    var canvasImage = new fabric.Image(image);
+    var canvasImage = new fabric.Image(image, {selectable: false, evented: false});
 
     if(image.classList.value !== 'stage-object n img_dragging') {
         var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 7, top: 4});
@@ -78,7 +78,8 @@ function handleDrop(e) {
         group = new fabric.Group([canvasImage], {left: e.layerX, top: e.layerY});
     }
     fabricCanvas.add(group);
-
+    fabricCanvas.setActiveObject(group);
+    editText();
     return false;
 }
 
