@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function bindDraggingFunctions() {
+    // If browser supports HTML5 DnD.
     if (window.FileReader) {
-        // If browser supports HTML5 DnD.
         // Bind the event listeners for the image elements
         images = document.querySelectorAll('#objects img');
         // Loop through the images
@@ -15,9 +15,9 @@ function bindDraggingFunctions() {
         });
         // Bind the event listeners for the canvas
         var canvasContainer = document.getElementById('canvas-container');
-        canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+        // canvasContainer.addEventListener('dragenter', handleDragEnter, false);
         canvasContainer.addEventListener('dragover', handleDragOver, false);
-        canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+        // canvasContainer.addEventListener('dragleave', handleDragLeave, false);
         canvasContainer.addEventListener('drop', handleDrop, false);
     } else {
         // Replace with a fallback to a library solution.
@@ -26,12 +26,24 @@ function bindDraggingFunctions() {
 }
 
 function handleDragStart(e) {
-    [].forEach.call(images, function (img) {
-        img.classList.remove('img_dragging');
-    });
+    // [].forEach.call(images, function (img) {
+    //     img.classList.remove('img_dragging');
+    // });
     this.classList.add('img_dragging');
 }
 
+function handleDragEnd(e) {
+    // [].forEach.call(images, function (img) {
+    //     img.classList.remove('img_dragging');
+    // });
+    this.classList.remove('img_dragging');
+}
+
+// function handleDragEnter(e) {
+//     // this / e.target is the current hover target.
+//     this.classList.add('over');
+// }
+//
 function handleDragOver(e) {
     if (e.preventDefault) {
         e.preventDefault(); // Necessary. Allows us to drop.
@@ -42,15 +54,10 @@ function handleDragOver(e) {
 
     return false;
 }
-
-function handleDragEnter(e) {
-    // this / e.target is the current hover target.
-    this.classList.add('over');
-}
-
-function handleDragLeave(e) {
-    this.classList.remove('over'); // this / e.target is previous target element.
-}
+//
+// function handleDragLeave(e) {
+//     this.classList.remove('over'); // this / e.target is previous target element.
+// }
 
 function handleDrop(e) {
     // this / e.target is current target element.
@@ -59,44 +66,24 @@ function handleDrop(e) {
         e.stopPropagation(); // stops the browser from redirecting.
     }
 
-    var img = document.querySelector('#images img.img_dragging');
 
-    console.log('event: ', e);
+    var group;
+    var image = document.querySelector('#objects img.img_dragging');
+    var canvasImage = new fabric.Image(image);
 
-    var newImage = new fabric.Image(img, {
-        width: img.width,
-        height: img.height,
-        // Set the center of the new object based on the event coordinates relative
-        // to the canvas container.
-        left: e.layerX,
-        top: e.layerY
-    });
-    canvas.add(newImage);
-
-
-    if (img.className !== "my-image1 img_dragging canvas-img") { //makes sure it should have text
-        var newText = new fabric.IText('#', {					//creates text
-            left: e.layerX + 6,
-            top: e.layerY + 3,
-            fontFamily: 'Helvetica',
-            fontSize: 30,
-            fill: 'white',
-        });
-        canvas.add(newText);
-        canvas.bringToFront(newText);
-        newText.enterEditing();
-        newText.selectAll();
+    if(image.classList.value !== 'stage-object n img_dragging') {
+        var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 7, top: 4});
+        group = new fabric.Group([canvasImage, text], {left: e.layerX-50, top: e.layerY-50});
+        // text.enterEditing();
+        // text.selectAll();
+    } else {
+        group = new fabric.Group([canvasImage], {left: e.layerX, top: e.layerY});
     }
-    var groupp = new fabric.Group([newImage, newText,]);
+    fabricCanvas.add(group);
 
-    canvas.add(groupp);
+    // textt.enterEditing();
+    // textt.selectAll();
 
     return false;
 }
 
-function handleDragEnd(e) {
-    // this/e.target is the source node.
-    [].forEach.call(images, function (img) {
-        img.classList.remove('img_dragging');
-    });
-}

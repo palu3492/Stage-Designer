@@ -19853,7 +19853,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
      */
     _initElement: function(element, options) {
       this.setElement(fabric.util.getById(element), options);
-      fabric.util.addClass(this.getElement(), fabric.Image.CSS_CANVAS);
+      // fabric.util.addClass(this.getElement(), fabric.Image.CSS_CANVAS);
     },
 
     /**
