@@ -74,16 +74,14 @@ function handleDrop(e) {
     if(image.classList.value !== 'stage-object n img_dragging') {
         var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 7, top: 4});
         group = new fabric.Group([canvasImage, text], {left: Math.round((e.layerX-50) / grid) * grid, top: Math.round((e.layerY-50) / grid) * grid});
-        // text.enterEditing();
-        // text.selectAll();
     } else {
         group = new fabric.Group([canvasImage], {left: e.layerX, top: e.layerY});
     }
     fabricCanvas.add(group);
 
-    // textt.enterEditing();
-    // textt.selectAll();
-
     return false;
 }
+
+// text.enterEditing();
+// text.selectAll();
 

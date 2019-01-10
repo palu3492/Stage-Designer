@@ -1,8 +1,6 @@
 
 
-    window.fabric.util.addListener(canvas.upperCanvasEl, 'dblclick', function (event, self) {
-        ChangeText();
-    });
+
 
 
     $(document).keydown(function (e) {
@@ -81,21 +79,5 @@ function exportSVG() {
 }
 
 
-function ChangeText() { //change text function
-    //	remove group
-    var act = canvas.getActiveObject(); //get object slected
-    var items = act._objects;			//gets all items in group
-    act._restoreObjectsState();			//puts them to original state
-    canvas.remove(act);					//removes them
-    for (var i = 0; i < items.length; i++) {
-        canvas.add(items[i]);				//adds items back and enters editing
-    }
-    canvas.renderAll();
-    if (items.length > 1) {
-        items[1].enterEditing();
-        items[1].selectAll();
-    }
-    var groupp2 = new fabric.Group(items);
-    canvas.add(groupp2);
-}
+
 
