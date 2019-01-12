@@ -1,3 +1,4 @@
 # Ignore folders
-.idea/*
 touch-2.4.2/*
+.*
+!/.gitignore
