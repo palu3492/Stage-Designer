@@ -59,30 +59,49 @@ function handleDragEnd(e) {
 //     this.classList.remove('over'); // this / e.target is previous target element.
 // }
 
+// function handleDrop(e) {
+//     // this / e.target is current target element.
+//
+//     // if (e.stopPropagation) {
+//     //     e.stopPropagation(); // stops the browser from redirecting.
+//     // }
+//
+//
+//     var group;
+//     var image = document.querySelector('#objects img.img_dragging');
+//     var canvasImage = new fabric.Image(image, {selectable: false, evented: false});
+//
+//     if(image.classList.value !== 'stage-object n img_dragging') {
+//         var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 7, top: 4});
+//         group = new fabric.Group([canvasImage, text], {left: Math.round((e.layerX-50) / grid) * grid, top: Math.round((e.layerY-50) / grid) * grid});
+//     } else {
+//         group = new fabric.Group([canvasImage], {left: Math.round((e.layerX-50) / grid) * grid, top: Math.round((e.layerY-50) / grid) * grid});
+//     }
+//     console.log(group);
+//     fabricCanvas.add(group);
+//     fabricCanvas.setActiveObject(group);
+//     editText();
+//     return false;
+// }
+
 function handleDrop(e) {
-    // this / e.target is current target element.
-
-    // if (e.stopPropagation) {
-    //     e.stopPropagation(); // stops the browser from redirecting.
-    // }
-
-
-    var group;
     var image = document.querySelector('#objects img.img_dragging');
     var canvasImage = new fabric.Image(image, {selectable: false, evented: false});
 
-    if(image.classList.value !== 'stage-object n img_dragging') {
+    if(image.classList.value === 'stage-object img_dragging') {
         var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 7, top: 4});
-        group = new fabric.Group([canvasImage, text], {left: Math.round((e.layerX-50) / grid) * grid, top: Math.round((e.layerY-50) / grid) * grid});
+        var group = new fabric.Group([canvasImage, text], {left: Math.round((e.layerX-50) / grid) * grid, top: Math.round((e.layerY-50) / grid) * grid});
+        fabricCanvas.add(group);
+        fabricCanvas.setActiveObject(group);
+        editText();
     } else {
-        group = new fabric.Group([canvasImage], {left: e.layerX, top: e.layerY});
+        canvasImage.left = Math.round((e.layerX-50) / grid) * grid;
+        canvasImage.top = Math.round((e.layerY-50) / grid) * grid;
+        canvasImage.selectable = true;
+        canvasImage.evented = true;
+        fabricCanvas.add(canvasImage);
+        fabricCanvas.setActiveObject(canvasImage);
     }
-    fabricCanvas.add(group);
-    fabricCanvas.setActiveObject(group);
-    editText();
+
     return false;
 }
-
-// text.enterEditing();
-// text.selectAll();
-
