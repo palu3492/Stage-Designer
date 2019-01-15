@@ -83,13 +83,17 @@ pointer-events: none;
     -webkit-user-drag: element;
     cursor: move;
 }
-#delete{
+
+#deleteButton{
 position:fixed;
-right:0px;
-top:0px;
-width: 150;
-height: 40;
+right:0;
+top:0;
+width: 150px;
+height: 40px;
+cursor: pointer;
+background-color:red;
 }
+
 #buttonnotepad{
 position:fixed;
 right:0px;

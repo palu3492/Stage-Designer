@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     fabric.util.addListener(fabricCanvas.upperCanvasEl, 'dblclick', function (e) {
         var target = fabricCanvas.findTarget(e);
-        if(target.type === 'group'){
+        if(target && target.type === 'group'){
             editText();
         }
     });
