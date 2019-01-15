@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         var activeObject = fabricCanvas.getActiveObject();
         if(activeObject && activeObject.type === "i-text" && activeObject.isEditing){
             // if not letter or is a number
-            console.log(e.keyCode);
-            if((32 <= e.keyCode && e.keyCode <= 126) && (e.keyCode < 48 || e.keyCode > 57)){
-                console.log('letter');
-                //backspace
-            }
+            // console.log(e.keyCode);
+            // if((32 <= e.keyCode && e.keyCode <= 126) && (e.keyCode < 48 || e.keyCode > 57)){
+            //     console.log('letter');
+            //     //backspace
+            // }
             // enter key pressed remove it
             // no more than 2 number
             // no letters only numbers

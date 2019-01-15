@@ -68,7 +68,7 @@ function handleDrop(e) {
     var canvasImage = new fabric.Image(image, {selectable: false, evented: false});
 
     if(image.classList.value === 'stage-object img_dragging') {
-        var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 7, top: 4});
+        var text = new fabric.IText('#', {fontFamily: 'Helvetica', fontSize: 32, fill: 'white', left: 4, top: 4});
         var group = new fabric.Group([canvasImage, text], {left: Math.round((e.layerX-50) / grid) * grid, top: Math.round((e.layerY-50) / grid) * grid});
         fabricCanvas.add(group);
         fabricCanvas.setActiveObject(group);
