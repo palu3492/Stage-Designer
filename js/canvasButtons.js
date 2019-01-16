@@ -93,7 +93,7 @@ function clearCanvas() {
 }
 
 function saveImg(){
-    window.open(fabricCanvas.toDataURL('png'));
+    // window.open(fabricCanvas.toDataURL('png'));
 }
 
 function openNotes(){
