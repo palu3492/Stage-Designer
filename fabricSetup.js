@@ -12,7 +12,7 @@ function setup() {
     grid = 33;
     addCanvasGrid();
     snapToGrid();
-    addStageImage();
+    // addStageImage();
 }
 
 function snapToGrid(){
@@ -44,7 +44,13 @@ function remapKeys(){
 }
 
 function addStageImage(){
-    var image = $('stage-front')[0];
-    var canvasImage = new fabric.Image(image, {selectable: false, evented: false, left: 10, top: 10});
-    fabricCanvas.add(canvasImage);
+    fabric.Image.fromURL("images/stageFront.png", function(image) {
+        image.set({'left':0});
+        image.set({'top':0});
+        image.set({'selectable':false});
+        image.set({'evented':false});
+        fabricCanvas.add(image);
+    });
+    // var canvasImage = new fabric.Image(image, {selectable: false, evented: false, left: 10, top: 10});
+    // fabricCanvas.add(canvasImage);
 }

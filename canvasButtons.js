@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     $('#notes').on('click',function(e){
         openNotes();
     });
+    $('#close-right').on('click',function(e){
+        closeNotes();
+    });
 });
 
 function deleteObjects() {
@@ -95,6 +98,12 @@ function saveImg(){
 
 function openNotes(){
     var main = $('#main');
-    console.log(main);
+    $('#right')[0].style.display = "initial";
     main.css("grid-template-columns", "260px auto 260px");
+}
+
+function closeNotes(){
+    var main = $('#main');
+    $('#right')[0].style.display = "none";
+    main.css("grid-template-columns", "260px auto 0");
 }
