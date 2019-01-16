@@ -13,7 +13,7 @@
     <div id="left">
         <img id="logo" src="images/logo.png" width="260px"/>
         <h1>Stage Designer</h1>
-        <hr/>
+        <hr id="hr1"/>
         <div id="objects">
             <img draggable="true" src="images/microphone.png" class="stage-object">
             <img draggable="true" src="images/guitar.png" class="stage-object">
@@ -21,13 +21,25 @@
             <img draggable="true" src="images/keyboard.png" class="stage-object">
             <img draggable="true" src="images/stool.png" class="stage-object n">
         </div>
+        <div id="aboutText">
+            About
+        </div>
     </div>
-    <div id="right">
+    <div id="middle">
         <div id="canvas-container">
-            <canvas id="stage-canvas" width="2000" height="2000"></canvas>
+            <canvas id="stage-canvas" width="500" height="500"></canvas>
         </div>
         <img src="images/stagefront.png" id="stage-front"/>
-        <div id="deleteButton">Delete object(s)</div>
+        <div id="buttonsContainer">
+            <div class="button" id="trash" title="Delete objects(s)"></div>
+            <div class="button" id="edit" title="Edit object"></div>
+            <div class="button" id="duplicate" title="Duplicate objects(s)"></div>
+            <div class="button" id="clear" title="Clear canvas"></div>
+            <div id="separator"></div>
+            <div class="button" id="notes" title="Open notes"></div>
+            <div class="button" id="save" title="Save as image"></div>
+            <div class="button" id="info" title="Information"></div>
+        </div>
         <!--<button id="buttonnotepad" onclick="outNotepad()">Notepad</button>-->
         <!--<button id="buttonnotepadin" onclick="inNotepad()">></button>-->
         <!--<textarea id="notepad"></textarea>-->
@@ -35,6 +47,16 @@
         <!--<button id="clearB" onclick="clearCanvas()">Clear all</button>-->
         <!--<button id="saveB" onclick="exportSVG()">save</button>-->
         <!--<button id="dupB">Duplicate object(s)</button>-->
+    </div>
+    <div id="right">
+        <div id="notes-container" class="container">
+            <div class="right-title">
+                <div id="close-right">
+
+                </div>
+                <h2>Notes</h2>
+            </div>
+        </div>
     </div>
 </div>
 </body>

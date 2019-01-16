@@ -12,6 +12,7 @@ function setup() {
     grid = 33;
     addCanvasGrid();
     snapToGrid();
+    addStageImage();
 }
 
 function snapToGrid(){
@@ -40,4 +41,10 @@ function remapKeys(){
     //         //backspace
     //     }
     // }
+}
+
+function addStageImage(){
+    var image = $('stage-front')[0];
+    var canvasImage = new fabric.Image(image, {selectable: false, evented: false, left: 10, top: 10});
+    fabricCanvas.add(canvasImage);
 }

@@ -1,7 +1,27 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    $('#deleteButton').on('click',function(e){
+    $('#trash').on('click',function(e){
         deleteObjects();
+    });
+    $(document).keydown(function (e) {
+        if (e.keyCode === 46) {
+            deleteObjects();
+        }
+    });
+    $('#edit').on('click',function(e){
+        editText();
+    });
+    $('#duplicate').on('click',function(e){
+        duplicateObjects();
+    });
+    $('#clear').on('click',function(e){
+        clearCanvas();
+    });
+    $('#save').on('click',function(e){
+        saveImg();
+    });
+    $('#notes').on('click',function(e){
+        openNotes();
     });
 });
 
@@ -11,9 +31,14 @@ function deleteObjects() {
         if(activeObject.type === 'group') {
             deleteGroup(activeObject)
         } else if(activeObject.type === 'activeSelection') {
+            // delete each group in selection
             var groups = activeObject.getObjects();
             groups.forEach(function (object) {
-                deleteGroup(object)
+                if(object.type === 'group') {
+                    deleteGroup(object)
+                } else {
+                    fabricCanvas.remove(object);
+                }
             });
         } else if(activeObject.type === 'image') {
             fabricCanvas.remove(activeObject);
@@ -23,53 +48,53 @@ function deleteObjects() {
 }
 
 function deleteGroup(activeObject){
+    // remove objects in group
     var objectsInGroup = activeObject.getObjects();
     objectsInGroup.forEach(function (object) {
         fabricCanvas.remove(object);
     });
+    // remove group
     fabricCanvas.remove(activeObject);
 }
 
-
-
-
-function outNotepad() {
-    var notepadID = document.getElementById('notepad');
-    var inbuttonID = document.getElementById('buttonnotepadin');
-    notepadID.style.right = "10px";
-    inbuttonID.style.right = "385px";
+function duplicateObjects(){
+    var activeObject = fabricCanvas.getActiveObject();
+    if(activeObject && activeObject.type !== 'i-text') {
+        activeObject.clone(function (clonedObject) {
+            fabricCanvas.discardActiveObject();
+            clonedObject.set({
+                left: clonedObject.left + 10,
+                top: clonedObject.top + 10
+            });
+            if (clonedObject.type === 'activeSelection') {
+                // active selection needs a reference to the canvas.
+                clonedObject.canvas = fabricCanvas;
+                clonedObject.forEachObject(function (obj) {
+                    fabricCanvas.add(obj);
+                });
+                // this should solve the unselectability
+                // clonedObject.setCoords();
+            } else {
+                fabricCanvas.add(clonedObject);
+            }
+            fabricCanvas.setActiveObject(clonedObject);
+            fabricCanvas.requestRenderAll();
+        });
+    }
 }
-
-function inNotepad() {
-    var notepadID = document.getElementById('notepad');
-    var inbuttonID = document.getElementById('buttonnotepadin');
-    notepadID.style.right = "-800px";
-    inbuttonID.style.right = "-50px";
-}
-
 
 function clearCanvas() {
-    canvas.clear();
-    // creates grid
-    for (var i = 0; i < (2000 / grid); i++) {
-        canvas.add(new fabric.Line([i * grid, 0, i * grid, 2000], {stroke: '#f7f7f7', selectable: false}));
-        canvas.add(new fabric.Line([0, i * grid, 2000, i * grid], {stroke: '#f7f7f7', selectable: false}))
-    }
-
-    // snap to grid
-
-    canvas.on('object:moving', function (options) {
-        options.target.set({
-            left: Math.round(options.target.left / grid) * grid,
-            top: Math.round(options.target.top / grid) * grid
-        });
-    });
+    fabricCanvas.clear();
+    addCanvasGrid();
+    snapToGrid();
 }
 
-function exportSVG() {
+function saveImg(){
+    window.open(fabricCanvas.toDataURL('png'));
+}
 
-    var svg = canvas.toSVG();
-    var data = "data:image/svg+xml," + encodeURIComponent(svg);
-    window.open(data);
-    //console.log(data);
+function openNotes(){
+    var main = $('#main');
+    console.log(main);
+    main.css("grid-template-columns", "260px auto 260px");
 }
