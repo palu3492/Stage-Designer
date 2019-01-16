@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d4adfb2-ec60-43fe-918c-cd5d598f120f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/canvasButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/canvasButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/canvasObjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/canvasObjects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/dragDrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dragDrop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/fabricSetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/fabricSetup.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,8 +22,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+            <state relative-caret-position="442">
+              <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#img#5;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -36,8 +34,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
+            <state relative-caret-position="369">
+              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fabricSetup.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fabricSetup.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/fabricSetup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+            <state relative-caret-position="510">
+              <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -63,17 +61,17 @@
       <file leaf-file-name="canvasObjects.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/canvasObjects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state relative-caret-position="425">
+              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="canvasButtons.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="canvasButtons.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/canvasButtons.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+            <state relative-caret-position="153">
+              <caret line="45" column="78" selection-start-line="45" selection-start-column="78" selection-end-line="45" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -90,8 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>key</find>
-      <find>13</find>
       <find>fabric.itext</find>
       <find>27</find>
       <find>exitEditing'</find>
@@ -105,7 +101,6 @@
       <find>backg</find>
       <find>stage-canvas</find>
       <find>right</find>
-      <find>canvas-container</find>
       <find>cloneObj</find>
       <find>border</find>
       <find>canvas-</find>
@@ -120,6 +115,9 @@
       <find>container</find>
       <find>font</find>
       <find>separator</find>
+      <find>title</find>
+      <find>buttons</find>
+      <find>canvas-container</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,11 +140,11 @@
         <option value="$PROJECT_DIR$/pdfTest.html" />
         <option value="$PROJECT_DIR$/js/createPDF.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/js/dragDrop.js" />
         <option value="$PROJECT_DIR$/js/canvasObjects.js" />
-        <option value="$PROJECT_DIR$/js/fabricSetup.js" />
+        <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/js/canvasButtons.js" />
+        <option value="$PROJECT_DIR$/js/fabricSetup.js" />
       </list>
     </option>
   </component>
@@ -231,7 +229,7 @@
       <workItem from="1546998271568" duration="10190000" />
       <workItem from="1547077691373" duration="31535000" />
       <workItem from="1547380271193" duration="16625000" />
-      <workItem from="1547498234916" duration="60045000" />
+      <workItem from="1547498234916" duration="62420000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1547114512015</created>
@@ -244,7 +242,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118395000" />
+    <option name="totallyTimeSpent" value="120770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -530,20 +528,20 @@
         <state relative-caret-position="-867" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        <state relative-caret-position="442">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#img#5;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -554,24 +552,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fabricSetup.js">
+    <entry file="file://$PROJECT_DIR$/js/canvasButtons.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+        <state relative-caret-position="153">
+          <caret line="45" column="78" selection-start-line="45" selection-start-column="78" selection-end-line="45" selection-end-column="78" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/canvasObjects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        <state relative-caret-position="425">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/canvasButtons.js">
+    <entry file="file://$PROJECT_DIR$/js/fabricSetup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+        <state relative-caret-position="510">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
         </state>
       </provider>
     </entry>

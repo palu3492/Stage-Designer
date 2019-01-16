@@ -10,8 +10,9 @@ function setup() {
     fabric.Object.prototype.hasControls = false;  //objects on canvas can't be resized/rotated
     fabric.IText.prototype.keysMap[13]  = 'exitEditing';
     grid = 33;
-    addCanvasGrid();
+    // addCanvasGrid();
     snapToGrid();
+    addOutline();
 }
 
 function snapToGrid(){
@@ -22,6 +23,12 @@ function snapToGrid(){
         });
     });
 
+}
+
+function addOutline(){
+    fabricCanvas.add(new fabric.Line([0, 0, 1920, 0], {stroke: '#eeeeee', selectable: false, hoverCursor: 'default'}));
+    fabricCanvas.add(new fabric.Line([0, 0, 0, 1080], {stroke: '#eeeeee', selectable: false, hoverCursor: 'default'}));
+    fabricCanvas.add(new fabric.Line([1919, 0, 1919, 1080], {stroke: '#eeeeee', selectable: false, hoverCursor: 'default'}));
 }
 
 function addCanvasGrid() {

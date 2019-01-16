@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addStageNote(){
-    var text = new fabric.IText('Note', {fontFamily: 'Helvetica', fontSize: 23, fill: 'black', left: 200, top: 200, class: 'canvasNote'});
+    var text = new fabric.IText('Note', {fontFamily: 'Helvetica', fontSize: 18, fill: 'black', left: 200, top: 200, class: 'canvasNote'});
     var activeObject = fabricCanvas.getActiveObject();
     if(activeObject){
         text.set({left: activeObject.left, top: activeObject.top + 102});

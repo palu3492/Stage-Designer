@@ -48,6 +48,7 @@ h1{
 #canvas-container {
     width: 100%;
     height: 100%;
+    background: url('images/background.png');
 }
 #stage-front{
     position: absolute;
@@ -75,13 +76,13 @@ h1{
     top: 0;
     border-left: 2px solid #d9d9d9;
     border-bottom: 2px solid #d9d9d9;
+    background: #f6f6f6;
 }
 #title-container{
     position: absolute;
     left: 0;
     top: 0;
-    border-right: 2px solid #d9d9d9;
-    border-bottom: 2px solid #d9d9d9;
+    background: #eaeaea;
     padding: 5px;
 }
 #title{
