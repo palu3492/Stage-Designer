@@ -7,7 +7,7 @@
     <script type="text/javascript" src="js/dragDrop.js"></script>
     <script type="text/javascript" src="js/canvasObjects.js"></script>
     <script type="text/javascript" src="js/canvasButtons.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js"></script>
 <body>
 <div id="main">
     <div id="left">
@@ -30,6 +30,10 @@
             <canvas id="stage-canvas" width="1920" height="1080"></canvas>
         </div>
         <img src="images/stageFront.png" id="stage-front"/>
+        <div id="title-container">
+            <p id="title">Title:</p>
+            <input id="title-input" type="text"/>
+        </div>
         <div id="buttons-container">
             <div class="button" id="trash" title="Delete objects(s)"></div>
             <div class="button" id="edit" title="Edit object"></div>
@@ -40,22 +44,21 @@
             <div class="button" id="save" title="Save as image"></div>
             <div class="button" id="info" title="Information"></div>
         </div>
-        <!--<button id="buttonnotepad" onclick="outNotepad()">Notepad</button>-->
-        <!--<button id="buttonnotepadin" onclick="inNotepad()">></button>-->
-        <!--<textarea id="notepad"></textarea>-->
-        <!--<p id="text1">Place object and type to change number or double click it</p>-->
-        <!--<button id="clearB" onclick="clearCanvas()">Clear all</button>-->
-        <!--<button id="saveB" onclick="exportSVG()">save</button>-->
-        <!--<button id="dupB">Duplicate object(s)</button>-->
     </div>
     <div id="right">
         <div id="notes-container" class="container">
             <div class="right-title">
-                <div id="close-right">
-                </div>
+                <div class="close-right"></div>
                 <h2>Notes</h2>
             </div>
             <textarea id="notes-area"></textarea>
+        </div>
+        <div id="info-container" class="container">
+            <div class="right-title">
+                <div class="close-right">
+                </div>
+                <h2>Notes</h2>
+            </div>
         </div>
     </div>
 </div>

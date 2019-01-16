@@ -8,7 +8,7 @@ html, body{
     height: 100%;
     display: grid;
     grid-template-areas: "left middle right";
-    grid-template-columns: 260px auto 0;
+    grid-template-columns: 262px auto 0;
     grid-template-rows: 100% 100% 100%;
 }
 #left{
@@ -16,6 +16,7 @@ html, body{
     background: grey;
     position: relative;
     overflow: hidden;
+    border-right: 2px solid black;
 }
 #logo{
     padding-top:6px;
@@ -64,6 +65,7 @@ h1{
     width: 100%;
     pointer-events: none;
 }
+
 /* Prevent the text contents of draggable elements from being selectable. */
 [draggable] {
     -moz-user-select: none;
@@ -83,7 +85,26 @@ h1{
     border-left: 2px solid #d9d9d9;
     border-bottom: 2px solid #d9d9d9;
 }
-
+#title-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 2px solid #d9d9d9;
+    border-bottom: 2px solid #d9d9d9;
+    padding: 5px;
+}
+#title{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    float: left;
+    padding-right: 10px;
+}
+#title-input{
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
 .button{
     width: 50px;
     height: 50px;
@@ -134,19 +155,20 @@ h1{
 #right{
     grid-area: right;
     display: none;
+    overflow: hidden;
 }
 
 .container{
     width: 100%;
     height: 100%;
     border-left: 2px solid #d9d9d9;
-    margin-left: -2px;
 }
+
 .right-title{
     height: 60px;
     border-bottom: 2px solid #d9d9d9;
 }
-#close-right{
+.close-right{
     background: url('images/icons/back.png');
     background-repeat: no-repeat;
     background-size: 10px;
@@ -167,7 +189,7 @@ h2{
     text-indent: 10px;
 }
 #notes-area{
-    height: calc(100% - 65px);
+    height: calc(100% - 62px);
     width: 100%;
     resize: none;
     border: none;
