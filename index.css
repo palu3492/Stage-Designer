@@ -23,7 +23,7 @@ html, body{
 }
 h1{
     width: 100%;
-    font-size: 30px;
+    font-size: 22px;
     color: white;
     margin: 0;
     text-align: center;
@@ -114,7 +114,8 @@ h1{
 #new-note{
     background: url('images/icons/newNote.png');
     background-repeat: no-repeat;
-    background-size: 50px;
+    background-size: 45px;
+    background-position: 2px 2px;
 }
 #edit{
     background: url('images/icons/edit.png');
