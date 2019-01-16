@@ -61,6 +61,7 @@ h1{
     bottom: 0;
     left: 0;
     width: 100%;
+    pointer-events: none;
 }
 /* Prevent the text contents of draggable elements from being selectable. */
 [draggable] {
@@ -160,4 +161,9 @@ h2{
     margin: 0;
     text-align: center;
     float: left;
+}
+#notes-area{
+    height: calc(100% - 65px);
+    width: 100%;
+    resize: none;
 }
