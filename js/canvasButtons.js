@@ -1,11 +1,17 @@
 
 document.addEventListener("DOMContentLoaded", function () {
+    $('#new-note').on('click',function(e){
+        addStageNote();
+    });
     $('#trash').on('click',function(e){
         deleteObjects();
     });
     $(document).keydown(function (e) {
-        if (e.keyCode === 46) {
-            deleteObjects();
+        var activeObject = fabricCanvas.getActiveObject();
+        if(activeObject && activeObject.type !== "i-text") {
+            if (e.keyCode === 46) {
+                deleteObjects();
+            }
         }
     });
     $('#edit').on('click',function(e){
@@ -35,6 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
         closeRight();
     });
 });
+
+function addStageNote(){
+    var text = new fabric.IText('Note', {fontFamily: 'Helvetica', fontSize: 23, fill: 'black', left: 200, top: 200, class: 'canvasNote'});
+    var activeObject = fabricCanvas.getActiveObject();
+    if(activeObject){
+        text.set({left: activeObject.left, top: activeObject.top + 102});
+    }
+    fabricCanvas.add(text);
+}
 
 function deleteObjects() {
     var activeObject = fabricCanvas.getActiveObject();

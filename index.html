@@ -20,6 +20,7 @@
             <img draggable="true" src="images/monitor.png" class="stage-object">
             <img draggable="true" src="images/keyboard.png" class="stage-object">
             <img draggable="true" src="images/stool.png" class="stage-object n">
+            <img id="plus" src="images/plus.png" style="display: none">
         </div>
     </div>
     <div id="middle">
@@ -32,11 +33,13 @@
             <input id="title-input" type="text"/>
         </div>
         <div id="buttons-container">
+            <div class="button" id="new-note" title="New note"></div>
+            <div class="separator"></div>
             <div class="button" id="trash" title="Delete objects(s)"></div>
             <div class="button" id="edit" title="Edit object"></div>
             <div class="button" id="duplicate" title="Duplicate objects(s)"></div>
             <div class="button" id="clear" title="Clear canvas"></div>
-            <div id="separator"></div>
+            <div class="separator"></div>
             <div class="button" id="notes" title="Open notes"></div>
             <div class="button" id="save" title="Save as image"></div>
             <div class="button" id="info" title="Information"></div>
@@ -55,6 +58,11 @@
                 <div id="close-info" class="close-right"></div>
                 <h2>Information</h2>
             </div>
+            <p class="info-text">To use:</p>
+            <p class="info-text">Drag elements from the objects tray on the left into the middle stage diagram to add an object to the stage diagram. Double click or click the edit icon to edit the input number of a selected object. Clicking the trash icon will delete all selected objects. Clicking the duplicate icon will duplicate all selected objects. Clicking the clear canvas icon will delete all objects. Clicking the save icon will save the title, stage diagram, and notes to a PDF to be printed or emailed. Clicking the notes icon will allow you to write down any notes that could be pertinent to the stage diagram.
+            </p>
+            <p class="info-text">Created by <a href="https://www.linkedin.com/in/alex-palumbo/">Alex Palumbo</a></p>
+            <p class="info-text">Project on <a href="https://github.com/palu3492/Stage-Diagram-Creator">GitHub</a></p>
         </div>
     </div>
 </div>

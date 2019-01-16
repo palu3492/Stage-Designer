@@ -6,24 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     $('body').on('keydown',function(e){
         var activeObject = fabricCanvas.getActiveObject();
-        if(activeObject && activeObject.type === "i-text" && activeObject.isEditing){
+        if(activeObject && activeObject.type === "i-text" && activeObject.isEditing && activeObject.class === 'inputNumber'){
             var k = e.which;
             if(k !== 8 && k !== 46 && k !== 123 && k !== 16 && k !== 17 && (k < 48 || k > 58 || activeObject.text.length >= 2)){
                 e.preventDefault();
             }
         }
     });
-
-    // $('input').keypress(function(e) {
-    //     var a = [];
-    //     var k = e.which;
-    //
-    //     for (i = 48; i < 58; i++)
-    //         a.push(i);
-    //
-    //     if (!(a.indexOf(k)>=0))
-    //         e.preventDefault();
-    // });
 });
 
 function editText(){
@@ -52,3 +41,4 @@ function ungroup(activeObject, objectsInGroup) {
         fabricCanvas.add(objectsInGroup[i]);
     }
 }
+
