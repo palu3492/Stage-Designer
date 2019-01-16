@@ -15,9 +15,6 @@ function bindDraggingFunctions() {
         });
         // Bind the event listeners for the canvas
         var canvasContainer = document.getElementById('canvas-container');
-        // canvasContainer.addEventListener('dragenter', handleDragEnter, false);
-        // canvasContainer.addEventListener('dragover', handleDragOver, false);
-        // canvasContainer.addEventListener('dragleave', handleDragLeave, false);
         canvasContainer.addEventListener('drop', handleDrop, false);
     } else {
         // Replace with a fallback to a library solution.
@@ -26,43 +23,15 @@ function bindDraggingFunctions() {
 }
 
 function handleDragStart(e) {
-    // [].forEach.call(images, function (img) {
-    //     img.classList.remove('img_dragging');
-    // });
     this.classList.add('img_dragging');
 }
 
 function handleDragEnd(e) {
-    // [].forEach.call(images, function (img) {
-    //     img.classList.remove('img_dragging');
-    // });
     this.classList.remove('img_dragging');
 }
 
-// function handleDragEnter(e) {
-//     // this / e.target is the current hover target.
-//     this.classList.add('over');
-// }
-//
-// function handleDragOver(e) {
-//     if (e.preventDefault) {
-//         e.preventDefault(); // Necessary. Allows us to drop.
-//     }
-//
-//     e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
-//     // NOTE: comment above refers to the article (see top) -natchiketa
-//
-//     return false;
-// }
-//
-// function handleDragLeave(e) {
-//     this.classList.remove('over'); // this / e.target is previous target element.
-// }
 
 function handleDrop(e) {
-    // if (e.stopPropagation) {
-    //     e.stopPropagation(); // stops the browser from redirecting.
-    // }
 
     var image = document.querySelector('#objects img.img_dragging');
     var canvasImage = new fabric.Image(image, {selectable: false, evented: false});

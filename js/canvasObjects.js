@@ -4,20 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
     fabric.util.addListener(fabricCanvas.upperCanvasEl, 'dblclick', function (e) {
         editText();
     });
-    // $('body').on('keydown',function(e){
-    //     var activeObject = fabricCanvas.getActiveObject();
-    //     if(activeObject && activeObject.type === "i-text" && activeObject.isEditing){
-    //         // if not letter or is a number
-    //         // console.log(e.keyCode);
-    //         // if((32 <= e.keyCode && e.keyCode <= 126) && (e.keyCode < 48 || e.keyCode > 57)){
-    //         //     console.log('letter');
-    //         //     //backspace
-    //         // }
-    //         // enter key pressed remove it
-    //         // no more than 2 number
-    //         // no letters only numbers
-    //     }
-    // });
+    $('body').on('keydown',function(e){
+        var activeObject = fabricCanvas.getActiveObject();
+        if(activeObject && activeObject.type === "i-text" && activeObject.isEditing){
+            var k = e.which;
+            if(k !== 8 && k !== 46 && k !== 123 && k !== 16 && k !== 17 && (k < 48 || k > 58 || activeObject.text.length >= 2)){
+                e.preventDefault();
+            }
+        }
+    });
 
     // $('input').keypress(function(e) {
     //     var a = [];

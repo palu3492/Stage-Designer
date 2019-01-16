@@ -14,7 +14,6 @@ html, body{
 #left{
     grid-area: left;
     background: grey;
-    position: relative;
     overflow: hidden;
     border-right: 2px solid black;
 }
@@ -39,14 +38,6 @@ h1{
 .stage-object{
     float:left;
     margin:15px;
-}
-#about-text{
-    width: 100%;
-    border-top: 1px black solid;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
 }
 #middle{
     grid-area: middle;
@@ -156,12 +147,15 @@ h1{
     grid-area: right;
     display: none;
     overflow: hidden;
+    border-left: 2px solid #d9d9d9;
 }
 
 .container{
     width: 100%;
     height: 100%;
-    border-left: 2px solid #d9d9d9;
+}
+#notes-container{
+    display: none;
 }
 #info-container{
     display: none;

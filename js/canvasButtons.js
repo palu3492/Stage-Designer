@@ -21,10 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
         saveImg();
     });
     $('#notes').on('click',function(e){
+        closeRight();
         openNotes();
     });
+    $('#info').on('click',function(e){
+        closeRight();
+        openInfo();
+    });
     $('#close-notes').on('click',function(e){
-        closeNotes();
+        closeRight();
+    });
+    $('#close-info').on('click',function(e){
+        closeRight();
     });
 });
 
@@ -118,13 +126,21 @@ function saveImg(){
 }
 
 function openNotes(){
-    var main = $('#main');
     $('#right')[0].style.display = "initial";
-    main.css("grid-template-columns", "262px auto 260px");
+    $('#notes-container')[0].style.display = "initial";
+    $('#main').css("grid-template-columns", "262px auto 260px");
 }
 
-function closeNotes(){
-    var main = $('#main');
-    $('#right')[0].style.display = "none";
-    main.css("grid-template-columns", "262px auto 0");
+function openInfo(){
+    $('#right')[0].style.display = "initial";
+    $('#info-container')[0].style.display = "initial";
+    $('#main').css("grid-template-columns", "262px auto 260px");
 }
+
+function closeRight(){
+    $('#right')[0].style.display = "none";
+    $('#notes-container')[0].style.display = "none";
+    $('#info-container')[0].style.display = "none";
+    $('#main').css("grid-template-columns", "262px auto 0");
+}
+
