@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $('#notes').on('click',function(e){
         openNotes();
     });
-    $('#close-right').on('click',function(e){
+    $('#close-notes').on('click',function(e){
         closeNotes();
     });
 });
