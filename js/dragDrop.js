@@ -17,7 +17,6 @@ function bindDraggingFunctions() {
         var canvasContainer = document.getElementById('canvas-container');
         canvasContainer.addEventListener('drop', handleDrop, false);
     } else {
-        // Replace with a fallback to a library solution.
         alert("This browser doesn't support the HTML5 Drag and Drop API.");
     }
 }
@@ -32,7 +31,6 @@ function handleDragEnd(e) {
 
 
 function handleDrop(e) {
-
     var image = document.querySelector('#objects img.img_dragging');
     var canvasImage = new fabric.Image(image, {selectable: false, evented: false});
 

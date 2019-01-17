@@ -107,7 +107,7 @@ h1{
 }
 .separator{
     float: left;
-    width: 2px;
+    width: 3px;
     height: 60px;
     background: #d9d9d9;
 }

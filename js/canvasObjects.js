@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var activeObject = fabricCanvas.getActiveObject();
         if(activeObject && activeObject.type === "i-text" && activeObject.isEditing && activeObject.class === 'inputNumber'){
             var k = e.which;
-            if(k !== 8 && k !== 46 && k !== 123 && k !== 16 && k !== 17 && (k < 48 || k > 58 || activeObject.text.length >= 2)){
+            if(k !== 8 && k !== 46 && k !== 123 && k !== 16 && k !== 17 && (k < 48 || k > 58 || (activeObject.text.length >= 2 && activeObject.getSelectedText().length < 2))){
                 e.preventDefault();
             }
         }
